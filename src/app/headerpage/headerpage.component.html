@@ -1,10 +1,22 @@
 <header>
     <img src="./assets/comp/head-pack/image-logo/logo.jpg" alt="Company Logo">
+
+    <!-- the below code is for the hamburger menu -->
+<div class="menu-toggle" (click)="toggleMenu()">
+    <div class="bar" [ngClass]="{'open': isMenuOpen}"></div>
+    <div class="bar" [ngClass]="{'open': isMenuOpen}"></div>
+    <div class="bar" [ngClass]="{'open': isMenuOpen}"></div>
+  </div>
+
+  <div [ngClass]="{'show-menu': isMenuOpen, 'hide-menu': !isMenuOpen}">
     <div>Home</div>
     <div>Services</div>
     <div>Careers</div>
     <div>About Us</div>
     <div>Contact Us</div>
+
+   </div>
+    
   
 </header>
 
@@ -15,3 +27,23 @@
     <img src="./assets/comp/head-pack/image-logo/email.jpg" alt="Email Logo" style="margin-left: 1rem;">
     <div>contactus&#64;whitegoldconsultancys.com</div>
 </nav>
+<section>
+    <img src="./assets/comp/head-pack/image-logo/imageWhiteGold.jpg" alt="WhiteGold">
+</section>
+
+<div class="quick-detail">
+    <img src="./assets/comp/head-pack/image-logo/blogImg.jpg" alt="Blog" style="cursor: pointer;">
+    <img src="./assets/comp/head-pack/image-logo/equalOppurtunity.jpg" alt="Oppurtunity">
+    <img src="./assets/comp/head-pack/image-logo/expertTraining.jpg" alt="Training">
+    <img src="./assets/comp/head-pack/image-logo/whyUs.jpg" alt="Question Mark" style="cursor: pointer;">
+</div>
+
+<div class="sec-img-content">
+<p>
+<span>"W</span>hiteGold Consultancy top-tier IT consultancy services tailored to meet the ever-evolving needs of modern businesses. As a hub for innovation and technological expertise, our website offers a comprehensive overview of our diverse services, including state-of-the-art cybersecurity measures, cloud computing, and efficient data management solutions. We are dedicated to aiding your digital transformation journey with solutions that resonate with your specific business goals".
+
+Our team, comprised of seasoned professionals passionate about technology, is the backbone of our success, committed to delivering excellence in every project. <br><br>Through our case studies, you can explore real-life scenarios where we've propelled businesses to new heights. The Blog section keeps you updated with the latest industry trends, offering valuable insights and tips. We pride ourselves on a client-centric approach, guaranteeing personalized service and steadfast support.
+
+Security and reliability are the cornerstones of our services, ensuring your data and operations are safe with us. Interactive tools on our site, like ROI calculators and IT health assessments, are designed to provide a customized understanding of your needs. Learn about our journey, values, and vision on our About Us page, which illustrates our commitment to leading the field in IT consultancy.</p>
+<img src="./assets/comp/head-pack/image-logo/turningPoint.jpg" alt="Turning Point">
+</div>
