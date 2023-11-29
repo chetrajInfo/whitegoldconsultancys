@@ -68,6 +68,7 @@ nav a {
     color: white;
     font-style: none;
     text-decoration: none;
+    font-size: 15px;
 }
 
 section img {
@@ -157,7 +158,7 @@ footer > div > div{
     line-height: 3rem;
 }
 
-footer > div > div:hover{
+footer > div > div:hover, a:hover{
     padding: 0.1rem;
     color: cornflowerblue;
     font-weight: bold;
@@ -166,6 +167,13 @@ footer > div > div:hover{
 
 .reserve{
     margin-top: 35vh;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-family:'Courier New', Courier, monospace;
 }
 @media screen and (max-width:990px) {
 
@@ -285,4 +293,5 @@ footer > div > div:hover{
     align-items: center;
     row-gap: 2rem;
   }
+ 
 }

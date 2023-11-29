@@ -1,0 +1,20 @@
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+    <table>
+        <caption><h2>Contact Us</h2></caption>
+        <tr>
+            <td><div class="table-cell">Email<span>*</span></div></td>
+            <td><div class="table-cell"><input type="email" name="email" [(ngModel)]="email" required></div></td>
+        </tr>
+
+        <tr>
+            <td><div class="table-cell">Phone<span>*</span></div></td>
+            <td><div class="table-cell"><input type="tel" name="phone" [(ngModel)]="phone" required></div></td>
+        </tr>
+
+        <tr>
+            <td><div class="table-cell">Message<span>*</span></div></td>
+            <td><div class="table-cell"><textarea id="message" name="message" rows="6" cols="60" [(ngModel)]="message" required></textarea></div></td>
+        </tr>
+    </table>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+</form>
