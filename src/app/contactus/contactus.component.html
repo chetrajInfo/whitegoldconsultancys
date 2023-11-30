@@ -1,19 +1,50 @@
 <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
     <table>
         <caption><h2>Contact Us</h2></caption>
+
+        <tr>
+            <td><div class="table-cell">Name<span>*</span></div></td>
+            <td>
+                <div class="table-cell">
+                    <input type="text" name="fullname" [(ngModel)]="fullname" #fullnameField="ngModel"  required>
+                    <div *ngIf="fullnameField.invalid && (fullnameField.dirty || fullnameField.touched)" class="error">
+                        Provide Your Name.
+                    </div>
+                </div>
+            </td>
+        </tr>
+
         <tr>
             <td><div class="table-cell">Email<span>*</span></div></td>
-            <td><div class="table-cell"><input type="email" name="email" [(ngModel)]="email" required></div></td>
+            <td>
+                <div class="table-cell">
+                    <input type="email" name="email" [(ngModel)]="email" #emailField="ngModel"  required>
+                    <div *ngIf="emailField.invalid && (emailField.dirty || emailField.touched)" class="error">
+                        Invalid email address.
+                    </div>
+                </div>
+            </td>
         </tr>
 
         <tr>
             <td><div class="table-cell">Phone<span>*</span></div></td>
-            <td><div class="table-cell"><input type="tel" name="phone" [(ngModel)]="phone" required></div></td>
+            <td>
+                <div class="table-cell">
+                    <input type="tel" name="phone" [(ngModel)]="phone" #phoneField="ngModel" maxlength="10" required pattern="[0-9]*">
+                    <div *ngIf="phoneField.errors?.['pattern'] && (phoneField.dirty || phoneField.touched)" class="error">
+                        Only numbers allowed.
+                    </div>
+                </div>
+            </td>
         </tr>
 
         <tr>
             <td><div class="table-cell">Message<span>*</span></div></td>
-            <td><div class="table-cell"><textarea id="message" name="message" rows="6" cols="60" [(ngModel)]="message" required></textarea></div></td>
+            <td>
+                <div class="table-cell">
+                    <textarea id="message" name="message" rows="6" cols="60" [(ngModel)]="message" #messageField="ngModel" required></textarea>
+                </div>
+            </td>
         </tr>
     </table>
     <button type="submit" [disabled]="!contactForm.valid">Submit</button>

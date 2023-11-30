@@ -22,22 +22,49 @@ button{
     margin-top: 1rem;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: bold;
+    
 }
 
-input[type="email"], input[type="tel"]{
+input[type="email"], input[type="tel"], input[type="text"]{
        height: 5vh;
-       width: 53vh;
+       width: 33vw;
        border-radius: 3px;
        border: 1px solid silver;
+       padding-left: 1px;
+       font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
+
+
+input[type="email"]:focus, input[type="tel"]:focus, input[type="text"]:focus{
+      outline: none;
+      box-shadow: 1px 2px 2px 2px grey;
+}
+
 textarea{
     border-radius: 3px;
     border: 1px solid silver;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding-left: 1px;
 }
+
+textarea:focus{
+    outline: none;
+    box-shadow: 1px 2px 2px 2px grey;
+}
+
 span{
     color: red;
 }
+.error {
+    background-color: red;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: white;
+    font-weight: bold;
+    width: 32vw;
+    padding: 3px;
+  }
 
+  
 @media screen and (max-width:800px) {
     
     form {
@@ -45,7 +72,7 @@ span{
        
      }
 
-     input[type="email"], input[type="tel"]{
+     input[type="email"], input[type="tel"], input[type="text"]{
         height: 4vh;
         width: 33vh;
        
@@ -57,5 +84,7 @@ span{
  button{
     height: 4vh; width: 12vw;
 }
+
+
 
 }
