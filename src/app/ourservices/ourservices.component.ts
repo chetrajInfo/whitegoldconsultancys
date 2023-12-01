@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-ourservices',
   templateUrl: './ourservices.component.html',
@@ -16,22 +15,25 @@ export class OurservicesComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]),
       course: new FormControl('DevOps'),
-      status: new FormControl('H1B'), // Add status form control
-      graduationDate: new FormControl({value: '', disabled: true}), // Add graduation date, initially disabled
-      universityName: new FormControl({value: '', disabled:true}),
+      status: new FormControl('H1B'),
       message: new FormControl('')
     });
 
-    // Listen for changes in the status field to toggle the graduation date field
-    this.contactForm.get('status')?.valueChanges.subscribe(value => {
-      if (value === 'F1') {
-        this.contactForm.get('graduationDate')?.enable();
-        this.contactForm.get('universityName')?.enable();
-      } else {
-        this.contactForm.get('graduationDate')?.disable();
-        this.contactForm.get('universityName')?.disable();
-      }
-    });
+    this.onStatusChange(); // Initial check
+    this.contactForm.get('status')?.valueChanges.subscribe(value => this.onStatusChange(value));
+  }
+
+  onStatusChange(value?: string) {
+    value = value || this.contactForm.get('status')?.value;
+    if (value === 'F1') {
+      this.contactForm.addControl('graduationDate', new FormControl('', Validators.required));
+      this.contactForm.addControl('universityName', new FormControl('', Validators.required));
+      this.contactForm.addControl('major', new FormControl('', Validators.required));
+    } else {
+      this.contactForm.removeControl('graduationDate');
+      this.contactForm.removeControl('universityName');
+      this.contactForm.removeControl('major');
+    }
   }
 
   onSubmit() {

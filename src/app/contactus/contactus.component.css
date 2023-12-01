@@ -84,7 +84,16 @@ span{
  button{
     height: 4vh; width: 12vw;
 }
+h2{
+    font-size: 19px;
+}
 
 
+}
 
+@media screen and (max-width:600px) {
+    h2{
+        font-size: 17px;
+    }
+    
 }

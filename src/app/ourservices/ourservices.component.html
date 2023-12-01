@@ -1,15 +1,22 @@
+<section>
+    <img src="./assets/comp/head-pack/image-logo/fullstack.jpg" alt="Java Full Stack">
+    <img src="./assets/comp/head-pack/image-logo/devops.jpg" alt="DevOps">
+    <img src="./assets/comp/head-pack/image-logo/dotnet.jpg" alt="Dot Net">
+</section>
+
+
+
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <table>
         <caption>
             <h2>Apply For Position</h2>
         </caption>
 
+        <div class="table-cell">Full Name<span>*</span></div>
         <tr>
+           
             <td>
-                <div class="table-cell">Full Name<span>*</span></div>
-            </td>
-            <td>
-                <div class="table-cell">
+                <div >
                     <input type="text" formControlName="fullname">
                     <div *ngIf="contactForm.get('fullname')?.invalid && (contactForm.get('fullname')?.dirty || contactForm.get('fullname')?.touched)"
                         class="error">
@@ -19,14 +26,10 @@
             </td>
         </tr>
 
-
-
+        <div class="table-cell">Email<span>*</span></div>
         <tr>
             <td>
-                <div class="table-cell">Email<span>*</span></div>
-            </td>
-            <td>
-                <div class="table-cell">
+                <div>
                     <input type="email" formControlName="email">
                     <div *ngIf="contactForm.get('email')?.invalid && (contactForm.get('email')?.dirty || contactForm.get('email')?.touched)"
                         class="error">
@@ -36,13 +39,12 @@
             </td>
         </tr>
 
+
+        <div class="table-cell">Phone<span>*</span></div>
         <tr>
             <td>
-                <div class="table-cell">Phone<span>*</span></div>
-            </td>
-            <td>
-                <div class="table-cell">
-                    <input type="tel" formControlName="phone">
+                <div>
+                    <input type="tel" formControlName="phone" maxlength="10">
                     <div *ngIf="contactForm.get('phone')?.errors?.['pattern'] && (contactForm.get('phone')?.dirty || contactForm.get('phone')?.touched)"
                         class="error">
                         Only Number.
@@ -51,12 +53,10 @@
             </td>
         </tr>
 
+        <div class="table-cell">Course<span>*</span></div>
         <tr>
             <td>
-                <div class="table-cell">Course<span>*</span></div>
-            </td>
-            <td>
-                <div class="table-cell">
+                <div>
                     <select formControlName="course">
                         <option value=".NET">.NET</option>
                         <option value="Java Full Stack">Java Full Stack</option>
@@ -67,48 +67,60 @@
         </tr>
 
 
+        <div class="table-cell">Status<span>*</span></div>
         <tr>
             <td>
-                <div class="table-cell">Status<span>*</span></div>
-            </td>
-            <td>
-                <div class="table-cell">
+                <div>
                     <select formControlName="status">
                        
                         <option value="H1B">H1B Holder</option>
                         <option value="F1">F1 Student</option>
                         <option value="tps">TPS Holder</option>
-                        <option value="gc">Green Card Holder</option>
+                        <option value="gc">Green Card</option>
                         <option value="usc">US Citizen</option>
                     </select>
                 </div>
             </td>
         </tr>
 
-        <tr *ngIf="contactForm.get('status')?.value === 'F1'">
-            <td><div class="table-cell">Graduation Date<span>*</span></div></td>
+
+        
+        <div *ngIf="contactForm.get('status')?.value === 'F1'">
+            <div class="table-cell">Graduation Date<span>*</span></div>
             <td>
-              <div class="table-cell">
+              <div>
                 <input type="date" formControlName="graduationDate" required>
               </div>
             </td>
-          </tr>
+        </div>
 
-          <tr *ngIf="contactForm.get('status')?.value === 'F1'">
-            <td><div class="table-cell">University<span>*</span></div></td>
+
+         
+          <div *ngIf="contactForm.get('status')?.value === 'F1'">
+            <div class="table-cell">University<span>*</span></div>
             <td>
-              <div class="table-cell">
+              <div>
                 <input type="text" formControlName="universityName" required>
               </div>
             </td>
-          </tr>
+        </div>
 
+       
+          <div *ngIf="contactForm.get('status')?.value === 'F1'">
+        
+          <div class="table-cell">Major<span>*</span></div>
+            <td>
+              <div>
+                <input type="text" formControlName="major" required>
+              </div>
+            </td>
+        </div>
+
+
+          <div class="table-cell">Note</div>
         <tr>
             <td>
-                <div class="table-cell">Note</div>
-            </td>
-            <td>
-                <div class="table-cell">
+                <div>
                     <textarea id="message" formControlName="message" rows="4" cols="40"></textarea>
                 </div>
             </td>

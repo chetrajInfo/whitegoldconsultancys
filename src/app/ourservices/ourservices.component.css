@@ -12,9 +12,30 @@ select:focus{
     outline: none;
 }
 
+select{
+    font-weight: bold;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 1em;
+
+}
+
+section img{
+    width: 31vw;
+    height: 31vh;
+    object-fit: contain;
+}
+
 @media screen and (max-width:600px) {
     select{
         height: 4vh;
+        font-size: 14px;
+    }
+    h2{
+        font-size: 17px;
     }
     
 }
