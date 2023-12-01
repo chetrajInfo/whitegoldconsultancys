@@ -1,0 +1,20 @@
+@import url("../contactus/contactus.component.css");
+
+select, input[type="date"]{
+    width: 18vw;
+    height: 5vh;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    border: 1px solid silver;
+    border-radius: 3px;
+}
+
+select:focus{
+    outline: none;
+}
+
+@media screen and (max-width:600px) {
+    select{
+        height: 4vh;
+    }
+    
+}
